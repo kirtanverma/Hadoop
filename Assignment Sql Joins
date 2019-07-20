@@ -1,0 +1,4 @@
+select s.StoreID, Gender, Age, COUNT(c.CustID) as Count_Cust_ID, MAX(Amount) as Max_Amount 
+From customers c, transactions t, stores s
+where c.CustID = t.CustID and t.StoreID = s.StoreID
+Group by s.StoreID, Gender, Age;
